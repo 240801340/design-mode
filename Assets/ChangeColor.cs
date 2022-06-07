@@ -4,7 +4,7 @@ public class ChangeColor : MonoBehaviour
 {
     Color color;
     bool ischange = false;
-    // 鼠标悬浮
+    // 鼠标悬浮     这里做了一个逻辑判断 
     void OnMouseOver()
     {
         if (!ischange)
@@ -18,6 +18,5 @@ public class ChangeColor : MonoBehaviour
     void OnMouseExit()
     {
         transform.GetComponent<MeshRenderer>().material.color = color;
-
     }
 }
