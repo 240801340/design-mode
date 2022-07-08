@@ -3,11 +3,17 @@ using UnityEngine.EventSystems;
 using System.Runtime.InteropServices;
 public class EventClick : MonoBehaviour, IPointerClickHandler
 {
+
+
     [DllImport("__Internal")]
-    private static extern void Hello();
+    private static extern void Hello(string str);
+
     public void OnPointerClick(PointerEventData eventData)
     {
+        Hello(this.transform.parent.gameObject.name);
         Debug.Log("** 物体名字:" + this.transform.parent.gameObject.name);
+
+
         if (NewBehaviourScript.iscolored == false)  //要是之前还没涂色的话
         {
             NewBehaviourScript.iscolored = true;
